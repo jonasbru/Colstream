@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 {% block body %}
-    <ul class=entries>
+    <form id="chat_form" method="post">
+        <input type="text" name="text" />
+        <input type="submit" value="Send!" />
+    </form>
+    <ul class="entries">
         {% for entry in entries %}
-            <li><h2>{{ entry }}</h2>{{ entry }}
-                {% else %}
-            <li><em>Unbelievable.  No entries here so far</em>
+            <li>{{ entry }}</li>
+        {% else %}
+            <li><em>Unbelievable.  No entries here so far</em></li>
         {% endfor %}
     </ul>
 {% endblock %}
